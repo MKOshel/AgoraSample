@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Agenda" representedClassName="Agenda" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="agendaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="availablePlaces" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dateTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="expendable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="joined" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mandatory" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="own" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attachment" inverseName="agenda" inverseEntity="Attachment" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="agendas" inverseEntity="Event" syncable="YES"/>
+        <relationship name="feedbacks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Feedback" inverseName="agenda" inverseEntity="Feedback" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="agendas" inverseEntity="Location" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Question" inverseName="agenda" inverseEntity="Question" syncable="YES"/>
+        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="agendas" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="AgendaDate" representedClassName="AgendaDate" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="agendaDates" inverseEntity="Event" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Answer" representedClassName="Answer" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Attachment" representedClassName="Attachment" syncable="YES">
+        <attribute name="agendaId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="blobName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="agenda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agenda" inverseName="attachments" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="beacon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beacon" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="attachments" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Beacon" representedClassName="Beacon" syncable="YES">
+        <attribute name="fileId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mac" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeAgenda" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="agenda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agenda" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="beacons" inverseEntity="Event" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privacy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="agendaDates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AgendaDate" inverseName="event" inverseEntity="AgendaDate" syncable="YES"/>
+        <relationship name="agendas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Agenda" inverseName="event" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attachment" inverseName="event" inverseEntity="Attachment" syncable="YES"/>
+        <relationship name="beacons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beacon" inverseName="event" inverseEntity="Beacon" syncable="YES"/>
+        <relationship name="feedbacks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Feedback" inverseName="event" inverseEntity="Feedback" syncable="YES"/>
+        <relationship name="organizers" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="User" inverseName="eventsOrganizer" inverseEntity="User" syncable="YES"/>
+        <relationship name="participants" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="User" inverseName="eventsParticipant" inverseEntity="User" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Question" inverseName="event" inverseEntity="Question" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Feedback" representedClassName="Feedback" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privacy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="agenda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agenda" inverseName="feedbacks" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="feedbacks" inverseEntity="Event" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="feedbacks" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="agendas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Agenda" inverseName="location" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Notification" representedClassName="Notification" syncable="YES">
+        <attribute name="agendaId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fileId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="read" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="agenda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agenda" syncable="YES"/>
+        <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attachment" syncable="YES"/>
+        <relationship name="beacon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beacon" syncable="YES"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="privacy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="agenda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agenda" inverseName="questions" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="questions" inverseEntity="Event" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jobTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="langKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggedIn" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="agendas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Agenda" inverseName="user" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" inverseName="events" inverseEntity="User" syncable="YES"/>
+        <relationship name="eventsOrganizer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="organizers" inverseEntity="Event" syncable="YES"/>
+        <relationship name="eventsParticipant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="participants" inverseEntity="Event" syncable="YES"/>
+        <relationship name="feedbacks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Feedback" inverseName="user" inverseEntity="Feedback" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Question" inverseName="user" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Agenda" positionX="-63" positionY="-18" width="128" height="360"/>
+        <element name="AgendaDate" positionX="-18" positionY="162" width="128" height="105"/>
+        <element name="Answer" positionX="-18" positionY="144" width="128" height="105"/>
+        <element name="Attachment" positionX="-27" positionY="135" width="128" height="165"/>
+        <element name="Beacon" positionX="-9" positionY="171" width="128" height="225"/>
+        <element name="Event" positionX="-54" positionY="81" width="128" height="285"/>
+        <element name="Feedback" positionX="18" positionY="189" width="128" height="135"/>
+        <element name="Location" positionX="-27" positionY="135" width="128" height="150"/>
+        <element name="Question" positionX="0" positionY="180" width="128" height="180"/>
+        <element name="User" positionX="-36" positionY="90" width="128" height="315"/>
+        <element name="Notification" positionX="-27" positionY="135" width="128" height="180"/>
+    </elements>
+</model>

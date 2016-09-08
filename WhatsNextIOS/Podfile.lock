@@ -1,0 +1,100 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AFOAuth2Manager (3.0.0):
+    - AFNetworking/NSURLSession (~> 3.0)
+  - BLMultiColorLoader (0.1.6)
+  - BPForms (2.1.1):
+    - BPForms/FloatLabel (= 2.1.1)
+  - BPForms/Core (2.1.1):
+    - Masonry
+  - BPForms/FloatLabel (2.1.1):
+    - BPForms/Core
+    - JVFloatLabeledTextField
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - CWStatusBarNotification (2.3.4)
+  - EAColourfulProgressView (0.1.0)
+  - Fabric (1.6.7)
+  - iOS-Slide-Menu (1.5)
+  - JSONModel (1.2.0)
+  - JVFloatLabeledTextField (1.1.0)
+  - LinearProgressBar (0.0.1)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - Masonry (1.0.0)
+  - MBCircularProgressBar (0.3.4)
+  - Selene (1.0.6)
+  - SwiftSpinner (0.9.5)
+  - UIScrollView-InfiniteScroll (0.7.3)
+  - XHAmazingLoading (0.2)
+  - YLProgressBar (3.8.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - AFOAuth2Manager (from `https://github.com/AFNetworking/AFOAuth2Manager.git`, branch
+    `3_0_0_branch`)
+  - BLMultiColorLoader
+  - BPForms
+  - Crashlytics
+  - CWStatusBarNotification (~> 2.3.4)
+  - EAColourfulProgressView (~> 0.1.0)
+  - Fabric
+  - iOS-Slide-Menu
+  - JSONModel
+  - LinearProgressBar
+  - MagicalRecord
+  - MBCircularProgressBar
+  - Selene
+  - SwiftSpinner
+  - UIScrollView-InfiniteScroll
+  - XHAmazingLoading
+  - YLProgressBar (~> 3.8.0)
+
+EXTERNAL SOURCES:
+  AFOAuth2Manager:
+    :branch: 3_0_0_branch
+    :git: https://github.com/AFNetworking/AFOAuth2Manager.git
+
+CHECKOUT OPTIONS:
+  AFOAuth2Manager:
+    :commit: 494ec254dade93f15669239e5b3ee27b9ef9846c
+    :git: https://github.com/AFNetworking/AFOAuth2Manager.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFOAuth2Manager: 0566da1be64883e339813d411229fdc9a84dab7c
+  BLMultiColorLoader: 9208e4541a88ec12e0da5af0e3619a805ab7ff6e
+  BPForms: 7daedcb193162c6346cfb4a07b760cbec6242224
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  CWStatusBarNotification: 3fec41edcb0ae3677d9febfcb9632d8bdf52294c
+  EAColourfulProgressView: 6197ce1144f750b0ee5eb17e65fd7c67e7c9de51
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  iOS-Slide-Menu: 40b0cbd8916c42afc755f0869793cd09e7a32102
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
+  LinearProgressBar: 8e88a5891dc964bea3ae88bdd3d5862cd168f628
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  MBCircularProgressBar: ff3b8e2f441214d9ee122a24ba0d4d00cc7de881
+  Selene: c0b0c3f9cdab08e9aed2456fdbc62a9d5fa042ac
+  SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
+  UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
+  XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
+  YLProgressBar: c6699d75d58042377132c9301d3ab8fd0204937d
+
+COCOAPODS: 0.39.0

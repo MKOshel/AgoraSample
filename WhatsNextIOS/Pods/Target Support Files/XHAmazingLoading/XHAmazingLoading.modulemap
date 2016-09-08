@@ -1,0 +1,6 @@
+framework module XHAmazingLoading {
+  umbrella header "XHAmazingLoading-umbrella.h"
+
+  export *
+  module * { export * }
+}

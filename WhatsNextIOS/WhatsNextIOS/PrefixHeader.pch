@@ -1,0 +1,112 @@
+//
+//  PrefixHeader.pch
+//  WhatsNextIOS
+//
+//  Created by dragos on 5/9/16.
+//  Copyright © 2016 Mobile Kinetics. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define SM SettingsManager
+#define RU RdUtils
+#define DB DatabaseManager
+#define GU GuiUtils
+#define RM RequestManager
+
+
+#import <MagicalRecord/MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord+ShorthandMethods.h>
+
+#import "RequestManager.h"
+#import "GuiUtils.h"
+#import "SettingsManager.h"
+#import "RdUtils.h"
+#import "DatabaseManager.h"
+
+
+#define BACK @"candela.png"
+#define NOTIFICATION_LOGIN @"NOTIFICATION_LOGIN_SUCCESS"
+#define NOTIFICATION_LOGOUT @"NOTIFICATION_LOGOUT_SUCCESS"
+#define NOTIFICATION_EVENT_CHANGED @"NOTIFICATION_EVENT_CHANGED"
+
+#define LOC(string) NSLocalizedString(string,nil)
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define yellow0 0xFFD60C
+#define blue_back 0x213750
+#define unread_back 0x213710
+
+#define grey400 0xBDBDBD
+
+#define black_12 0x1E000000
+#define black_38 0x61000000
+#define black_54 0x8A000000
+#define black_87 0xDD000000
+#define grey50 0xFAFAFA
+#define grey50_70 0xB3FAFAFA
+#define grey50_30 0x4CFAFAFA
+#define grey50_12 0x1EFAFAFA
+#define grey200 0xEEEEEE
+#define grey300 0xE0E0E0
+#define grey500 0x9e9e9e
+#define grey900 0x212121
+#define grey900_st 0x7f212121
+
+#define white 0xFFFFFF
+
+#define red500 0xF44336
+#define red700 0xD32F2F
+#define red900 0xb71c1c
+
+#define teal700 0x00BFA5
+#define teal400 0x1DE9B6
+
+#define cyan400 0x26C6DA
+#define blue700 0x1976D2
+#define green500 0x4CAF50
+#define blue700_st 0x9f1976D2
+#define lime_theme_goal 0xCDDC39
+
+
+
+#define grey800 0x424242
+
+#define semitransparent 0x20FF0000
+#define transparent 0x7F000000
+
+#define amber500 0xffc107
+#define orange700 0xf57c00
+
+#define grey200accent 0xAAAAAA
+
+#define balck_12 0x1F000000
+
+
+#define grayfadegoal 0xBDBDBD
+
+
+#define menutextcolor 0x000000
+#define menubackgroundcolor 0xFFFFFF
+
+#define toolbar_goals_background_color 0xCDDC39
+
+#define menutextcolor 0x000000
+#define menubackgroundcolor 0xFFFFFF
+
+#define toolbar_trip_background_color red500
+#define toolbar_scores_background_color orange700
+#define toolbar_message_background_color red500
+#define toolbar_edit_profile_background_color red500
+
+#define activity_score_circle 0xFFFFFFFF
+
+
+#define RGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(float)(0xFF - ((rgbValue & 0xFF000000) >> 24))/255.0]
+
+#define APP ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#endif /* PrefixHeader_pch */

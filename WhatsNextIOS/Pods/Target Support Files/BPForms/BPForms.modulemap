@@ -1,0 +1,6 @@
+framework module BPForms {
+  umbrella header "BPForms-umbrella.h"
+
+  export *
+  module * { export * }
+}
